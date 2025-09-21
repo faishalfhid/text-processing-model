@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spam Classifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .container {
+            margin-top: 50px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            width: 500px;
+            text-align: center;
+        }
+
+        h2 { margin-bottom: 20px; color: #333; }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            resize: none;
+            margin-bottom: 15px;
+            transition: border 0.3s ease;
+        }
+
+        textarea:focus { border: 1px solid #007bff; outline: none; }
+
+        button {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s ease;
+        }
+
+        button:hover { background: #0056b3; }
+
+        .result { margin-top: 25px; text-align: left; }
+
+        .result h3 { margin-bottom: 10px; color: #333; }
+
+        .prediction {
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .spam { background: #ffe6e6; color: #d93025; }
+        .ham { background: #e6ffe6; color: #137333; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Spam Classifier dengan Naive Bayes & SVM</h2>
+        <form method="post">
+            <textarea name="message" rows="5" placeholder="Masukkan pesan..."></textarea><br>
+            <button type="submit">Prediksi</button>
+        </form>
+
+        {% if prediction_nb is not none %}
+        <div class="result">
+            <h3>Hasil Prediksi:</h3>
+            <div class="prediction {% if prediction_nb==1 %}spam{% else %}ham{% endif %}">
+                Naive Bayes: {{ prediction_nb }} ({{ 'Spam' if prediction_nb==1 else 'Non Spam' }})
+            </div>
+            <div class="prediction {% if prediction_svm==1 %}spam{% else %}ham{% endif %}">
+                SVM: {{ prediction_svm }} ({{ 'Spam' if prediction_svm==1 else 'Non Spam' }})
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
