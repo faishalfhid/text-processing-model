@@ -1,0 +1,10 @@
+sastrawi
+pandas
+numpy
+flask
+scikit-learn
+pylint
+flake8
+black
+jupyterlab
+nbconvert

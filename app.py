@@ -2,9 +2,10 @@ from flask import Flask, render_template, request
 import pickle
 
 # Load vectorizer dan model
-vectorizer = pickle.load(open("vectorizer_2.pkl", "rb"))
-nb_model = pickle.load(open("naive_bayes_2.pkl", "rb"))
-svm_model = pickle.load(open("svm_2.pkl", "rb"))
+model_path = "./models"
+vectorizer = pickle.load(open(model_path + "/vectorizer_2.pkl", "rb"))
+nb_model = pickle.load(open(model_path + "/naive_bayes_2.pkl", "rb"))
+svm_model = pickle.load(open(model_path + "/svm_2.pkl", "rb"))
 
 app = Flask(__name__)
 
