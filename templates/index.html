@@ -78,10 +78,10 @@
         {% if prediction_nb is not none %}
         <div class="result">
             <h3>Hasil Prediksi:</h3>
-            <div class="prediction {% if prediction_nb==1 %}spam{% else %}ham{% endif %}">
+            <div id="prediction-nb" class="prediction {% if prediction_nb==1 %}spam{% else %}ham{% endif %}">
                 Naive Bayes: {{ prediction_nb }} ({{ 'Spam' if prediction_nb==1 else 'Non Spam' }})
             </div>
-            <div class="prediction {% if prediction_svm==1 %}spam{% else %}ham{% endif %}">
+            <div id="prediction-svm" class="prediction {% if prediction_svm==1 %}spam{% else %}ham{% endif %}">
                 SVM: {{ prediction_svm }} ({{ 'Spam' if prediction_svm==1 else 'Non Spam' }})
             </div>
         </div>

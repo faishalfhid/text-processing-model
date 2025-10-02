@@ -3,9 +3,9 @@ import pickle
 
 # Load vectorizer dan model
 model_path = "./models"
-vectorizer = pickle.load(open(model_path + "/vectorizer_2.pkl", "rb"))
-nb_model = pickle.load(open(model_path + "/naive_bayes_2.pkl", "rb"))
-svm_model = pickle.load(open(model_path + "/svm_2.pkl", "rb"))
+vectorizer = pickle.load(open(model_path + "/vectorizer.pkl", "rb"))
+nb_model = pickle.load(open(model_path + "/naive_bayes.pkl", "rb"))
+svm_model = pickle.load(open(model_path + "/svm.pkl", "rb"))
 
 app = Flask(__name__)
 
